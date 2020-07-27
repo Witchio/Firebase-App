@@ -1,4 +1,12 @@
 // Web app's basic configuration, connect to firebase db
+
+/**
+ * ! Sources for using Firebase
+ * ? https://www.youtube.com/watch?v=noB98K6A0TY
+ * ? https://firebase.google.com/docs/database/web/read-and-write
+ * ? https://softauthor.com/learn-to-build-firebase-crud-app-with-javascript-part01-reading-data/
+ * ? https://firebase.google.com/docs/reference/js/firebase.database.Reference#equalto
+ */
 var firebaseConfig = {
     apiKey: "AIzaSyBfshrbgEZppCu-OhYvMdP9Bt662XDGW14",
     authDomain: "ng-technical-eval.firebaseapp.com",
@@ -14,18 +22,20 @@ firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
 
-//Let's select the 10 first elements of the database and display them
+//Let's select the 50 first elements of the database and display them
 
-for (i = 0; i < 10; i++) {
+for (i = 0; i < 50; i++) {
 
     //Create references
     const dbRefObject = firebase.database().ref().child(i);
 
-    // I loop through each asset to display them on the html file
+    // I loop through each asset and display them on the html file
+    // EvnentListener can be "on" instead of "once" if we want it to dynamically change with the values on the firebase database
     let data = dbRefObject.once('value').then(function (snapshot) {
+        //Here we get one object of the database
         objectData = snapshot.val();
 
-        //We inject these data into the html by creating clone rows of the table
+        //We inject the object's data into the html by creating clone rows of the table
         const row = document.querySelector(".table-none");
         let rowClone = row.cloneNode(true);
 
@@ -55,20 +65,3 @@ for (i = 0; i < 10; i++) {
     })
 }
 
-
-
-
-
-
-
-
-
-
-
-/**
- * ! Sources
- * ? https://www.youtube.com/watch?v=noB98K6A0TY
- * ? https://firebase.google.com/docs/database/web/read-and-write
- * ? https://softauthor.com/learn-to-build-firebase-crud-app-with-javascript-part01-reading-data/
- * ? https://firebase.google.com/docs/reference/js/firebase.database.Reference#equalto
- */

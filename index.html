@@ -5,12 +5,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!--Link to css stylesheet-->
     <link rel="stylesheet" href="styles/style.css">
+    <!--Link to bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
 
 <body>
     <h1>Hello World</h1>
-    <pre id="object"></pre>
+    <table class="parent-table table ">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col"> Fund name</th>
+                <th scope="col">Subfund name</th>
+                <th scope="col">Share-class name</th>
+                <th scope="col">Date</th>
+                <th scope="col">Number of alerts</th>
+                <th scope="col">Report Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="table-none">
+                <td class="fund"></td>
+                <td class="subfund"></td>
+                <td class="shareClass"></td>
+                <td class="date"></td>
+                <td class="alerts"></td>
+                <td class="status"></td>
+
+            </tr>
+        </tbody>
+    </table>
 
 
 
@@ -23,9 +49,13 @@
 
     <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js"></script>
 
+
+    <!--Javascript and Jquery with CDN-->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+    <script src="scripts/firebaseData.js"></script>
     <script src="scripts/script.js"></script>
-
-
 </body>
 
 </html>

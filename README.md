@@ -1,2 +1,5 @@
 # Fire-base App
-# First try to use Firebase Database and hosting. Just creating a simple dashboard by using a json data file.
+
+Attempt at creating a very simple Firebase app by using it's database and hosting service. 
+
+https://ng-technical-eval.firebaseio.com
